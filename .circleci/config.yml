@@ -6,6 +6,4 @@ jobs:
       - checkout
       - run: docker run -d -p 8545 --name ganache stevenzeiler/ganache
       - run: docker build -t named-robot .
-      - run: export GANACHE_HOST=ganache
-      - run: export GANACHE_PORT=8545
-      - run: docker run -it --rm --link ganache named-robot npm test
+      - run: ./run_tests_docker.sh
